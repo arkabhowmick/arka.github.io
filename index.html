@@ -2,9 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-<!--<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">-->
+    <!--<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">-->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Uranos</title>
   </head>
   <body>
@@ -15,13 +17,17 @@
               <p>URANOS <span>PSD</span></p>
             </div>
             <nav id="main-nav">
+              <a id="menu"><span class="nav-icon glyphicon glyphicon-th-list"></span></a>
+
               <ul>
-                <li><a href="index.html" class="menu-item active" >home</a></li>
-                <li><a href="#" class="menu-item">about us</a></li>
-                <li><a href="#" class="menu-item">our team</a></li>
-                <li><a href="#" class="menu-item">portfolio</a></li>
-                <li><a href="#" class="menu-item">work</a></li>
+                <a href="index.html"  ><li class="active" class="menu-item">home</li></a>
+                <a href="#" ><li class="menu-item">about us</li></a>
+                <a href="#" ><li  class="menu-item">our team</li></a>
+                <a href="#"><li class="menu-item">portfolio</li></a>
+                <a href="#"><li class="menu-item">work</li></a>
               </ul>
+
+
             </nav>
         </div>
     </header>
@@ -33,6 +39,9 @@
           <h1 class="bold-font">free PSD templates</h1>
         </div>
         <form>
+            <input type="email" name="email" value="" placeholder="EMAIL">
+            <input type="password" name="password" value="" placeholder="PASSWORD">
+            <button type="submit" name="submit">REGISTER</button>
         </form>
       </div>
     </section>
@@ -58,4 +67,8 @@
     </footer>
 
   </body>
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="js/menu.js">
+
+  </script>
 </html>
