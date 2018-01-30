@@ -1,14 +1,17 @@
 @import 'mediaQuery';
+@import 'userDefinedMixins';
 //$yellow : #FFE347;
 
 $yellow : #f9d50e;
 $black: #000;
 $white: #fff;
+$light-white: #fff;
 $default-font : 'Roboto', sans-serif;
 $desktop-small : 1000px;
 $tablet: 768px;
 $phone : 480px;
 $trans-time : 0.5s;
+$services-background:#191b28;
 
 *{
   margin:0;
@@ -164,7 +167,7 @@ header{
   background-color: $yellow;
   border-radius: 5px;
   color:$black;
-  padding: 5px 5px;
+  padding: 7px 15px;
   font-size: 80%;
   &:hover{
     color:black;
@@ -196,10 +199,10 @@ header{
     grid-gap: 2px;
     div{
       text-align: center;
-      grid-column: 2/9;
+      grid-column: 1/10;
       grid-row:3/4;
       transition : grid-row $trans-time;
-      min-width: 800px;
+      min-width: 350px;
 
       h1{
         font-size: 290%;
@@ -224,7 +227,10 @@ header{
       min-width: 615px;
       //padding:40px 50px;
       @include tablet{
-        grid-row: 3/4;
+        //grid-row: 3/4;
+        grid-column: 1/10;
+        width:100%;
+        min-width: 200px;
       }
       input{
         width:200px;
@@ -238,6 +244,14 @@ header{
         border-radius: 3px;
         font-weight: 700;
         font-size: 90%;
+        &:focus{
+          border: 1px solid $yellow;
+        }
+        @include tablet{
+          width:100%;
+          margin-right: 0px;
+          margin-bottom: 5px;
+        }
       }
       button{
         width:180px;
@@ -256,6 +270,106 @@ header{
           color:$yellow;
           cursor: pointer;
         }
+
+        @include tablet{
+          width:100%;
+          margin-left:0px;
+        }
+      }
+    }
+  }
+}
+
+/*SERVICES SECTION*/
+#services{
+  background-color: $services-background;
+  .container{
+    padding: 60px 0;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows : repeat(2,minmax(0,250px));
+    align-items: center;
+    justify-items:center;
+    @include tablet{
+      grid-template-rows : repeat(2,minmax(0,300px));
+      grid-template-columns: 1fr 1fr;
+    }
+    @include phone{
+      display:block;
+    }
+    .service-desc{
+      padding: 20px 0;
+      text-align: center;
+      h2{
+        color:$white;
+        font-weight:300;
+        font-size:180%;
+        line-height: 1.5;
+        @include tablet{
+          font-size: 150%;
+        }
+      }
+      p{
+        color:$light-white;
+        font-weight:100;
+        font-size: 80%;
+        line-height: 2;
+      }
+    }
+    #i-phone{
+      grid-column: 2/3;
+      grid-row: 2/3;
+      align-self: flex-end;
+      @include desktop{
+        img{
+          max-width: 100%;
+        }
+      }
+      @include tablet{
+        display:none;
+      }
+    }
+    #printer-services{
+      grid-column: 1/2;
+      grid-row: 1/2;
+      h2:before{
+        position: relative;
+        top: 15px;
+        content: url('img/printer.png')  "\00a0 \00a0";
+      }
+    }
+    #mobile-services{
+      grid-column: 3/4;
+      grid-row: 1/2;
+      h2:before{
+        position: relative;
+        top: 15px;
+        content:url('img/mobile.png') "\00a0 \00a0";
+      }
+      @include tablet{
+        grid-column: 2/3;
+      }
+    }
+
+    #it-services{
+      grid-column: 1/2;
+      grid-row: 2/3;
+      h2:before{
+        position: relative;
+        top: 15px;
+        content:url('img/pc.png') "\00a0 \00a0";
+      }
+    }
+    #printer1-services{
+      grid-column: 3/4;
+      grid-row: 2/3;
+      h2:before{
+        position: relative;
+        top: 15px;
+        content:url('img/printer1.png') "\00a0 \00a0";
+      }
+      @include tablet{
+        grid-column: 2/3;
       }
     }
   }
