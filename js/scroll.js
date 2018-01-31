@@ -1,14 +1,12 @@
 $(document).ready(function(){
 
   $(window).scroll(function(){
-
-
-    if($(this).scrollTop()>210){
-
-      $('header').addClass("fixed-nav");
+    console.log($(this).scrollTop());
+    if($(document).scrollTop()>210){
+        $("header").css({'height':'50px','backgroundColor':'black'});
     }
-    else{
-      $('header').removeClass('fixed-nav');
+    else if($(document).scrollTop()<210){
+        $("header").css({'height':'120px','backgroundColor':'rgba(0,0,0,0)'});
     }
   });
 });

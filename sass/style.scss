@@ -7,6 +7,7 @@ $light-yellow : #ffe347;
 $black: rgba(0,0,0,0.8);
 $white: #fff;
 $light-white: rgba(255,255,255,0.7);
+$transparent: rgba(0,0,0,0);
 $default-font : 'Roboto', sans-serif;
 $deep-blue: #191b28;
 $desktop-small : 1000px;
@@ -44,170 +45,132 @@ $services-background:#191b28;
 
 
 /*HEADER*/
+
 header{
-  width:100%;
-  position: fixed;
-  z-index: 1;
-  height:100px;
-  text-transform: uppercase;
-  border-top: 7px solid $yellow;
-  transition: height $trans-time,margin-top $trans-time, all $trans-time;
-  .container{
-    margin-top:50px;
-    @include tablet{
-      margin-top: 0px;
-      padding:2px 5px;
-      width:100%;
-    }
-  }
-  @include tablet{
-    height:50px;
-    background-color: $black;
-  }
-}
-.none{
-  background-color: rgba(0,0,0,0);
-  transition:background-color $trans-time;
-}
-.fixed-nav{
-
-  margin-top:0px;
-  height:50px;
-
-  .container{
-    background-color: $black;
-    padding:5px;
-    margin-top: 0px;
     width:100%;
-    @include desktop{
-      padding:2px 5px;
-    }
-  }
-}
-
-.logo{
-  padding: 0;
-  float:left;
-  color:white;
-  height:43px;
-  p{
-    font-size: 180%;
-    font-weight: 500;
-    transition: font-size $trans-time;
-
-    @include desktop{
-      font-size: 150%;
-    }
-  }
-  span{
-    font-size: 60%;
-    background-color:$yellow;
-    border-radius: 2px;
-    color:#000;
-    padding-left: 5px;
-    padding-right: 5px;
-  }
-}
-
-#main-nav{
-  float:right;
-  #menu{
-    width:60px;
-    height:50px;
-    display:none;
-    span{
-      color:$white;
-      font-size: 120%;
-      text-align: center;
-      line-height: 1.5;
-      float: right;
-      &:hover{
-        color:$yellow;
-      }
-    }
+    height: 120px;
+    transition: $trans-time linear all;
+    position: fixed;
+    top:0px;
+    left:0px;
+    background-color: $transparent;
     @include tablet{
-      display:block;
+        height:50px !important;
+        background-color: $black !important;
     }
-    &:hover{
-      cursor:pointer;
-    }
-  }
 
-  ul{
-    list-style: none;
-    @include tablet{
-      overflow: hidden;
-      height:0;
-      transition: height $trans-time;
-    }
-    a{
-      text-decoration: none;
-      li{
-        display:inline-block;
-        @include tablet{
-          display:block;
-          padding: 20px;
+    #logo{
+        font-size: 180%;
+        font-weight: 500;
+        transition: font-size $trans-time;
+        color:$white;
+        @include desktop{
+          font-size: 150%;
         }
+        &:hover{
+          text-decoration: none;
+          color:$white;
+        }
+        span{
+            font-size: 50%;
+            background-color:$yellow;
+            border-radius: 2px;
+            color:$black;
+            padding:2px 10px;
+        }
+    }
+
+    #menu-icon{
+      display:none;
+      position: absolute;
+      top:0px;
+      right:0px;
+      width:50px;
+      height:50px;
+      color:$white;
+      span{
+          font-size:180%;
+          padding: 5px;
+      }
+
+      &:hover{
+          color:$yellow;
+          cursor:pointer;
+      }
+
+      @include tablet{
+        display:block;
+
+        &:hover + ul{
+            height:300px;
+        }
+        &:hover + ul a{
+            height:100px;
+        }
+
       }
     }
-    @include tablet{
-      position:absolute;
-      //display:none;
-      right:0px;
-      top:43px;
-      width:300px;
-      background-color: black;
-    }
-    @include phone{
-      width:100%;
-    }
+    nav{
+        float:right;
+        ul{
+            list-style: none;
+            @include tablet{
 
+                width:60%;
+                height:0px;
+                transition: $trans-time linear all;
+                background-color: $black;
+                position: absolute;
+                top:50px;
+                right:0px;
+            }
+            a{
+                text-transform: uppercase;
+                text-decoration: none;
+                color:$white;
+
+                &:hover{
+                    color:$yellow;
+                    text-decoration: none;
+                }
+
+                li{
+                    display:inline-block;
+                    font-size: 85%;
+                    font-weight:500;
+                    padding:0px 20px;
+
+                    @include tablet{
+                        display:block;
+                        padding:20px 20px;
+                    }
+
+                }
+                .active{
+                    background-color: $yellow;
+                    color:$black;
+                    border-radius: 3px;
+                    padding:10px 5px;
+                    transition: $trans-time linear all;
+                    border:1px solid $yellow;
+
+                    @include tablet{
+                        border-radius: 0px;
+                    }
+                    &:hover{
+                      background-color: $transparent;
+                      border:1px solid $yellow;
+                      color:$yellow;
+                    }
+                }
+
+
+            }
+
+        }
     }
-  .open{
-    height:auto;
-  }
 }
 
-.menu-item{
-  font-weight:500;
-  font-size:90%;
-  color:white;
-  text-decoration: none;
-  padding: 10px 20px ;
-  transition: color 1s;
-  transition: font-size $trans-time,padding $trans-time;
-  &:hover{
-    color:$yellow;
-    text-decoration: none;
-  }
-
-  @include desktop{
-    font-size:70%;
-    padding: 10px;
-  }
-}
-
-.active{
-  background-color: $yellow;
-  border-radius: 3px;
-  color:$black;
-  padding: 7px 20px;
-  font-size: 90%;
-  transition: background-color $trans-time;
-  &:hover{
-    color:$yellow;
-    background-color: rgba(0,0,0,0);
-    border: 1px solid $yellow;
-    border-radius: 2px;
-
-  }
-
-  @include tablet{
-    border-radius:0px;
-    font-weight: 700;
-    padding: 0;
-  }
-}
 
 /*MAIN SECTION*/
 #main{
