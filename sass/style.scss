@@ -1,0 +1,735 @@
+@import 'mediaQuery';
+@import 'userDefinedMixins';
+//$yellow : #FFE347;
+
+$yellow : #ffd800;
+$light-yellow : #ffe347;
+$black: rgba(0,0,0,0.8);
+$white: #fff;
+$light-white: rgba(255,255,255,0.7);
+$default-font : 'Roboto', sans-serif;
+$deep-blue: #191b28;
+$desktop-small : 1000px;
+$tablet: 768px;
+$phone : 480px;
+$trans-time : 0.5s;
+$services-background:#191b28;
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-size:20px;
+  //font-family: 'Roboto Condensed', sans-serif;
+  font-family: $default-font;
+  text-rendering: optimizeLegibility;
+}
+
+.container{
+    width:80%;
+    //max-width: 1000px;
+    margin:auto;
+    @include tablet{
+      width:90%;
+    }
+}
+
+.light-font{
+  font-weight: 100;
+}
+
+.bold-font{
+  font-weight:500;
+}
+
+
+/*HEADER*/
+header{
+  width:100%;
+  position: fixed;
+  z-index: 1;
+  height:100px;
+  text-transform: uppercase;
+  border-top: 7px solid $yellow;
+  transition: height $trans-time,margin-top $trans-time, all $trans-time;
+  .container{
+    margin-top:50px;
+    @include tablet{
+      margin-top: 0px;
+      width:100%;
+    }
+  }
+  @include tablet{
+    height:50px;
+    background-color: $black;
+  }
+}
+
+.fixed-nav{
+
+  margin-top:0px;
+  height:50px;
+
+  .container{
+    background-color: $black;
+    padding:5px;
+    margin-top: 0px;
+    width:100%;
+    @include desktop{
+      padding:2px 5px;
+    }
+  }
+}
+
+.logo{
+  padding: 0;
+  float:left;
+  color:white;
+  height:43px;
+  p{
+    font-size: 200%;
+    font-weight: 500;
+    transition: font-size $trans-time;
+    @include desktop{
+      font-size: 150%;
+    }
+  }
+  span{
+    font-size: 60%;
+    background-color:$yellow;
+    border-radius: 2px;
+    color:#000;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+#main-nav{
+  float:right;
+  #menu{
+    width:60px;
+    height:50px;
+    display:none;
+    span{
+      color:$white;
+      font-size: 120%;
+      text-align: center;
+      line-height: 1.5;
+      &:hover{
+        color:$yellow;
+      }
+    }
+    @include tablet{
+      display:block;
+    }
+    &:hover{
+      cursor:pointer;
+    }
+  }
+
+  ul{
+    list-style: none;
+    @include tablet{
+      overflow: hidden;
+      height:0;
+      transition: height $trans-time;
+    }
+    a{
+      text-decoration: none;
+      li{
+        display:inline-block;
+        @include tablet{
+          display:block;
+          padding: 20px;
+        }
+      }
+    }
+    @include tablet{
+      position:absolute;
+      //display:none;
+      right:0px;
+      top:43px;
+      width:300px;
+      background-color: black;
+    }
+    @include phone{
+      width:100%;
+    }
+
+    }
+  .open{
+    height:auto;
+  }
+}
+
+.menu-item{
+  font-weight:500;
+  font-size:90%;
+  color:white;
+  text-decoration: none;
+  padding: 10px 20px ;
+  transition: color 1s;
+  transition: font-size $trans-time,padding $trans-time;
+  &:hover{
+    color:$yellow;
+    text-decoration: none;
+  }
+
+  @include desktop{
+    font-size:70%;
+    padding: 10px;
+  }
+}
+
+.active{
+  background-color: $yellow;
+  border-radius: 5px;
+  color:$black;
+  padding: 7px 15px;
+  font-size: 80%;
+  &:hover{
+    color:black;
+  }
+
+  @include tablet{
+    border-radius:0px;
+    font-weight: 700;
+    padding: 0;
+  }
+}
+
+/*MAIN SECTION*/
+#main{
+
+  //height:900px;
+  background-image: url('img/main.png');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+
+  .container{
+    display:grid;
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: repeat(6,150px);
+    align-items: center;
+    justify-items:center;
+    grid-gap: 2px;
+    div{
+      text-align: center;
+      grid-column: 1/10;
+      grid-row:3/4;
+      transition : grid-row $trans-time;
+      min-width: 350px;
+
+      h1{
+        font-size: 290%;
+        transition: font-size $trans-time;
+        color:$white;
+        @include desktop{
+          font-size: 250%;
+        }
+        @include tablet{
+          font-size:200%;
+        }
+      }
+      @include tablet{
+        grid-row: 2/3;
+      }
+    }
+
+    form{
+      grid-column: 3/8;
+      grid-row: 4/5;
+      transition : grid-row $trans-time;
+      min-width: 615px;
+      //padding:40px 50px;
+      @include tablet{
+        //grid-row: 3/4;
+        grid-column: 1/10;
+        width:100%;
+        min-width: 200px;
+      }
+      input{
+        width:200px;
+        height:60px;
+        padding: 20px;
+        margin-right:5px;
+        //margin-left: 10px;
+        background-color: rgba(0,0,0,0);
+        border:1px solid $white;
+        color:$white;
+        border-radius: 3px;
+        font-weight: 700;
+        font-size: 90%;
+        &::-webkit-input-placeholder{
+          color: $light-white !important;
+        }
+        &:-moz-placeholder{
+          color: $light-white !important;
+        }
+        &::-moz-placeholder {  /* Firefox 19+ */
+          color: $light-white !important;
+        }
+
+        &:-ms-input-placeholder {
+          color: $light-white !important;
+        }
+        &:focus{
+          outline: 1px solid $yellow;
+          border:0px;
+        }
+        @include tablet{
+          width:100%;
+          margin-right: 0px;
+          margin-bottom: 5px;
+        }
+      }
+      button{
+        width:180px;
+        height:60px;
+        margin-left: 5px;
+        text-align: center;
+        background-color: $yellow;
+        border: 0px;
+        border-radius: 5px;
+        font-weight: 700;
+        transition: background-color 0.5s;
+
+        &:hover{
+          background-color: rgba(0,0,0,0);
+          border: 1px solid $yellow;
+          color:$yellow;
+          cursor: pointer;
+        }
+
+        @include tablet{
+          width:100%;
+          margin-left:0px;
+        }
+      }
+    }
+  }
+}
+
+/*SERVICES SECTION*/
+#services{
+  background-color: $services-background;
+  .container{
+    padding: 60px 0;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows : repeat(2,minmax(0,250px));
+    align-items: center;
+    justify-items:center;
+    @include tablet{
+      grid-template-rows : repeat(2,minmax(0,300px));
+      grid-template-columns: 1fr 1fr;
+    }
+    @include phone{
+      display:block;
+    }
+    .service-desc{
+      padding: 20px 0;
+      text-align: center;
+      h2{
+        color:$white;
+        font-weight:300;
+        font-size:180%;
+        line-height: 1.5;
+        @include tablet{
+          font-size: 150%;
+        }
+      }
+      p{
+        color:$light-white;
+        font-weight:100;
+        font-size: 80%;
+        line-height: 2;
+      }
+    }
+    #i-phone{
+      grid-column: 2/3;
+      grid-row: 2/3;
+      align-self: flex-end;
+      transition: max-width $trans-time;
+      @include desktop{
+        img{
+          max-width: 100%;
+        }
+      }
+      @include tablet{
+        display:none;
+      }
+    }
+    #printer-services{
+      grid-column: 1/2;
+      grid-row: 1/2;
+      h2:before{
+        position: relative;
+        top: 15px;
+        content: url('img/printer.png')  "\00a0 \00a0";
+      }
+    }
+    #mobile-services{
+      grid-column: 3/4;
+      grid-row: 1/2;
+      h2:before{
+        position: relative;
+        top: 15px;
+        content:url('img/mobile.png') "\00a0 \00a0";
+      }
+      @include tablet{
+        grid-column: 2/3;
+      }
+    }
+
+    #it-services{
+      grid-column: 1/2;
+      grid-row: 2/3;
+      h2:before{
+        position: relative;
+        top: 15px;
+        content:url('img/pc.png') "\00a0 \00a0";
+      }
+    }
+    #printer1-services{
+      grid-column: 3/4;
+      grid-row: 2/3;
+      h2:before{
+        position: relative;
+        top: 15px;
+        content:url('img/printer1.png') "\00a0 \00a0";
+      }
+      @include tablet{
+        grid-column: 2/3;
+      }
+    }
+  }
+}
+
+/*TEAM SECTION*/
+#team{
+    background-color: $yellow;
+    .container{
+        width:90%;
+        display:grid;
+        transition:display $trans-time;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: 1fr 2fr;
+        grid-row-gap: 30px;
+        transition: width $trans-time;
+        padding-top:100px;
+        padding-bottom: 60px;
+        @include tablet{
+            display:block;
+        }
+        @include desktop{
+            width:100%;
+        }
+        #team-heading{
+          grid-row: 1/2;
+          grid-column: 1/5;
+          text-align: center;
+          h1{
+              font-size:280%;
+              transition:font-size $trans-time;
+              @include phone{
+                font-size: 240%;
+              }
+          }
+          h3{
+              margin-top: 10px;
+              font-size:150%;
+              font-weight: bolder;
+          }
+        }
+
+        .team-desc{
+          text-align: center;
+          padding:15px 5px 5px 5px;
+
+          img{
+            width:150px;
+            height:150px;
+          }
+          @include tablet{
+            width:60%;
+            margin: auto;
+          }
+          h2{
+            font-weight: bolder;
+            color:$black;
+            transition: font-size $trans-time;
+            @include desktop{
+              font-size: 120%;
+            }
+          }
+          p{
+            font-weight: 100;
+            font-size: 90%;
+          }
+        }
+        #team1{
+          grid-row:2/3;
+          grid-column: 1/2;
+        }
+        #team2{
+          grid-row:2/3;
+          grid-column: 2/3;
+        }
+        #team3{
+          grid-row:2/3;
+          grid-column: 3/4;
+        }
+        #team4{
+          grid-row:2/3;
+          grid-column: 4/5;
+        }
+    }
+}
+
+/*DOWNLOAD SECTION*/
+#download{
+    display:grid;
+    grid-template-rows: 1fr 2fr;
+    .container{
+        width:50%;
+        margin:0;
+        padding:50px 80px 60px 80px;
+        transition: width $trans-time;
+        @include desktop{
+          padding:20px;
+          width:40%;
+        }
+        @include tablet{
+          text-align: center;
+        }
+        h1{
+            font-size:150%;
+            font-weight: bolder;
+            margin-bottom: 20px;
+        }
+        p{
+            font-size: 80%;
+            font-weight: 300;
+            line-height: 2;
+        }
+        a{
+          text-decoration: none;
+          color:$white;
+          background-color: $deep-blue;
+          font-size: 80%;
+          font-weight: bold;
+          padding: 20px 40px;
+          border-radius: 5px;
+          transition: background-color $trans-time;
+          &:hover{
+            background-color: rgba(0,0,0,0);
+            border: 1px solid $deep-blue;
+            color:$deep-blue;
+            cursor: pointer;
+          }
+        }
+        #last-p{
+          margin-bottom:70px;
+        }
+    }
+
+    .small-section{
+        background-color: $light-yellow;
+        .macbook{
+
+          width:60%;
+          position: absolute;
+          right:0px;
+          img{
+            width:100%;
+          }
+          @include tablet{
+            display:none;
+          }
+        }
+        .container{
+          transition:width $trans-time;
+            @include tablet{
+              width:100%;
+            }
+        }
+    }
+
+    .big-section{
+        background-color: $white;
+        .container{
+          transition:width $trans-time;
+            @media only screen and(max-width:980px){
+              width:100%;
+            }
+        }
+    }
+
+
+}
+
+/*APP WORKING SECTION*/
+#work{
+    background:  linear-gradient(to bottom,rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('img/main.png');
+    background-size:200%;
+    transition: background-size $trans-time;
+    @include desktop{
+      background-size:cover;
+    }
+    background-repeat: no-repeat;
+    background-position: top;
+    color:$white;
+    .container{
+      width:90%;
+      display:grid;
+      transition:display $trans-time;
+      grid-template-columns: repeat(4,1fr);
+      grid-template-rows: 1fr 2fr 1fr;
+      grid-row-gap: 40px;
+      transition: width $trans-time;
+      padding-top:100px;
+      padding-bottom: 20px;
+
+      @include tablet{
+          display:block;
+      }
+      @include desktop{
+          width:100%;
+      }
+
+      button{
+        width:200px;
+        height:60px;
+        margin: auto;
+        color:$black;
+        font-size:90%;
+        text-align: center;
+        background-color: $yellow;
+        border: 0px;
+        border-radius: 2px;
+        font-weight: 700;
+        transition: background-color 0.5s;
+        grid-row: 3/4;
+        grid-column: 1/5;
+        &:hover{
+          background-color: rgba(0,0,0,0);
+          border: 1px solid $yellow;
+          color:$yellow;
+          cursor: pointer;
+        }
+        @include tablet{
+          display: block;
+          margin: 30px auto;
+        }
+
+      }
+      #work-heading{
+        grid-row: 1/2;
+        grid-column: 1/5;
+        text-align: center;
+        h1{
+            font-size:280%;
+            transition:font-size $trans-time;
+            @include phone{
+              font-size: 240%;
+            }
+        }
+        h3{
+            margin-top: 10px;
+            font-size:150%;
+            font-weight: bolder;
+        }
+      }
+
+
+      .work-desc{
+            text-align: center;
+            padding:15px 5px 5px 5px;
+
+            img{
+              width:110px;
+              height:100px;
+            }
+            @include tablet{
+              width:60%;
+              margin: auto;
+            }
+            h2{
+              font-weight: bolder;
+              color:$white;
+              transition: font-size $trans-time;
+              @include desktop{
+                font-size: 120%;
+              }
+            }
+            p{
+              font-weight: 100;
+              font-size: 90%;
+            }
+      }
+      #work1{
+        grid-row:2/3;
+        grid-column: 1/2;
+      }
+      #work2{
+        grid-row:2/3;
+        grid-column: 2/3;
+      }
+      #work3{
+        grid-row:2/3;
+        grid-column: 3/4;
+      }
+      #work4{
+        grid-row:2/3;
+        grid-column: 4/5;
+      }
+    }
+}
+
+footer{
+  background-color: $deep-blue;
+  color:$white;
+  display:grid;
+  grid-template-rows: 0.7fr 0.3fr;
+  grid-template-columns: repeat(4,1fr);
+  padding-bottom: 80px;
+  @include tablet{
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: repeat(2,1fr);
+  }
+  text-align: center;
+  .links{
+    padding-top:100px;
+    a{
+      font-size: 80%;
+      color:$white;
+      text-decoration: none;
+      &:hover{
+        color:$yellow;
+      }
+    }
+  }
+  .credits{
+    grid-column: 1/5;
+    grid-row: 2/3;
+    margin: auto;
+    padding:100px 40px;
+    @include tablet{
+      grid-column: 1/3;
+      grid-row:3/4;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    p{
+      font-size: 70%;
+      font-weight: 100;
+      a{
+        text-decoration: none;
+        color:$yellow;
+        font-size: 100%;
+      }
+    }
+  }
+}
