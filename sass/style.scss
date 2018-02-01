@@ -1,5 +1,6 @@
 @import 'mediaQuery';
 @import 'userDefinedMixins';
+@import 'preloadAnimation';
 //$yellow : #FFE347;
 
 $yellow : #ffd800;
@@ -43,6 +44,14 @@ $services-background:#191b28;
   font-weight:500;
 }
 
+/*PRELOAD*/
+.preload{
+    position:fixed;
+    z-index:100;
+    width:100%;
+    height:100vh;
+    background-color: $deep-blue;
+}
 
 /*HEADER*/
 header{
@@ -65,11 +74,10 @@ header{
     @include tablet{
         height:50px !important;
         background-color: $black !important;
-    }
-    @include phone{
         padding-top: 0px !important;
         border-top:0px !important;
     }
+
 
     #logo{
         font-size: 180%;

@@ -1,7 +1,6 @@
 $(document).ready(function(){
-
+  $(".preload").fadeOut("slow");
   $(window).scroll(function(){
-    console.log($(this).scrollTop());
     if($(document).scrollTop()>210){
         $("#header").css({'height':'50px','border':'0px','paddingTop':'0','backgroundColor':'black'});
     }
