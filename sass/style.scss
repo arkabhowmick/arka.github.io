@@ -20,7 +20,8 @@ $services-background:#191b28;
 *{
   margin:0;
   padding:0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-size:20px;
   //font-family: 'Roboto Condensed', sans-serif;
   font-family: $default-font;
@@ -57,6 +58,7 @@ $services-background:#191b28;
 header{
     width:100%;
     height: 120px;
+    -webkit-transition: $trans-time linear all;
     transition: $trans-time linear all;
     position: fixed;
     z-index:10 !important;
@@ -82,6 +84,7 @@ header{
     #logo{
         font-size: 180%;
         font-weight: 500;
+        -webkit-transition: font-size $trans-time;
         transition: font-size $trans-time;
         color:$white;
         @include desktop{
@@ -139,6 +142,7 @@ header{
                 margin-top:0px;
                 width:360px;
                 height:300px;
+                -webkit-transition: $trans-time linear all;
                 transition: $trans-time linear all;
                 background-color: $black;
                 position: absolute;
@@ -220,7 +224,9 @@ header{
     display:grid;
     grid-template-columns: repeat(9,1fr);
     grid-template-rows: repeat(6,150px);
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     justify-items:center;
     grid-gap: 2px;
     @include tablet{
@@ -230,13 +236,16 @@ header{
       text-align: center;
       grid-column: 1/10;
       grid-row:3/4;
+      -webkit-transition : grid-row $trans-time;
       transition : grid-row $trans-time;
+      transition : grid-row $trans-time, -ms-grid-row $trans-time;
       min-width: 350px;
       @include tablet{
         margin-top:150px;
       }
       h1{
         font-size: 290%;
+        -webkit-transition: font-size $trans-time;
         transition: font-size $trans-time;
         color:$white;
         @include desktop{
@@ -261,7 +270,9 @@ header{
     form{
       grid-column: 3/8;
       grid-row: 4/5;
+      -webkit-transition : grid-row $trans-time;
       transition : grid-row $trans-time;
+      transition : grid-row $trans-time, -ms-grid-row $trans-time;
       min-width: 615px;
       //padding:40px 50px;
       @include tablet{
@@ -317,6 +328,7 @@ header{
         border: 0px;
         border-radius: 5px;
         font-weight: 700;
+        -webkit-transition: background-color 0.5s;
         transition: background-color 0.5s;
 
         &:hover{
@@ -343,7 +355,9 @@ header{
     display:grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows : repeat(2,minmax(0,250px));
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     justify-items:center;
     @include tablet{
       grid-template-rows : repeat(2,minmax(0,300px));
@@ -374,7 +388,9 @@ header{
     #i-phone{
       grid-column: 2/3;
       grid-row: 2/3;
-      align-self: flex-end;
+      -ms-flex-item-align: end;
+          align-self: flex-end;
+      -webkit-transition: max-width $trans-time;
       transition: max-width $trans-time;
       @include desktop{
         img{
@@ -437,10 +453,12 @@ header{
     .container{
         width:90%;
         display:grid;
+        -webkit-transition:display $trans-time;
         transition:display $trans-time;
         grid-template-columns: repeat(4,1fr);
         grid-template-rows: 1fr 2fr;
         grid-row-gap: 30px;
+        -webkit-transition: width $trans-time;
         transition: width $trans-time;
         padding-top:100px;
         padding-bottom: 60px;
@@ -456,6 +474,7 @@ header{
           text-align: center;
           h1{
               font-size:280%;
+              -webkit-transition:font-size $trans-time;
               transition:font-size $trans-time;
               @include phone{
                 font-size: 240%;
@@ -475,14 +494,31 @@ header{
           img{
             width:150px;
             height:150px;
+            position: relative;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            right:500px;
+            -webkit-transform:rotate(180deg);
+                    transform:rotate(180deg);
+            -webkit-transition:all ease-in $trans-time+0.2;
+            transition:all ease-in $trans-time+0.2;
           }
           @include tablet{
             width:60%;
             margin: auto;
           }
+
+          .text{
+              opacity: 0;
+              filter: alpha(opacity=0);
+              -webkit-transition:all ease-in $trans-time+0.4;
+              transition:all ease-in $trans-time+0.4;
+          }
+
           h2{
             font-weight: bolder;
             color:$black;
+            -webkit-transition: font-size $trans-time;
             transition: font-size $trans-time;
             @include desktop{
               font-size: 120%;
@@ -520,6 +556,7 @@ header{
         width:50%;
         margin:0;
         padding:50px 80px 60px 80px;
+        -webkit-transition: width $trans-time;
         transition: width $trans-time;
         @include desktop{
           padding:20px;
@@ -546,6 +583,7 @@ header{
           font-weight: bold;
           padding: 20px 40px;
           border-radius: 5px;
+          -webkit-transition: background-color $trans-time;
           transition: background-color $trans-time;
           &:hover{
             background-color: rgba(0,0,0,0);
@@ -574,6 +612,7 @@ header{
           }
         }
         .container{
+          -webkit-transition:width $trans-time;
           transition:width $trans-time;
             @include tablet{
               width:100%;
@@ -584,6 +623,7 @@ header{
     .big-section{
         background-color: $white;
         .container{
+          -webkit-transition:width $trans-time;
           transition:width $trans-time;
             @media only screen and(max-width:980px){
               width:100%;
@@ -596,9 +636,11 @@ header{
 
 /*APP WORKING SECTION*/
 #work{
+    background:  -webkit-gradient(linear,left top, left bottom,from(rgba(0,0,0,0.3)),to(rgba(0,0,0,0.3))), url('img/main.png');
     background:  linear-gradient(to bottom,rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('img/main.png');
     background-attachment: fixed;
     background-size:200%;
+    -webkit-transition: background-size $trans-time;
     transition: background-size $trans-time;
     @include desktop{
       background-size:cover;
@@ -609,10 +651,12 @@ header{
     .container{
       width:90%;
       display:grid;
+      -webkit-transition:display $trans-time;
       transition:display $trans-time;
       grid-template-columns: repeat(4,1fr);
       grid-template-rows: 1fr 2fr 1fr;
       grid-row-gap: 40px;
+      -webkit-transition: width $trans-time;
       transition: width $trans-time;
       padding-top:100px;
       padding-bottom: 20px;
@@ -635,6 +679,7 @@ header{
         border: 0px;
         border-radius: 2px;
         font-weight: 700;
+        -webkit-transition: background-color 0.5s;
         transition: background-color 0.5s;
         grid-row: 3/4;
         grid-column: 1/5;
@@ -656,6 +701,7 @@ header{
         text-align: center;
         h1{
             font-size:280%;
+            -webkit-transition:font-size $trans-time;
             transition:font-size $trans-time;
             @include phone{
               font-size: 240%;
@@ -684,6 +730,7 @@ header{
             h2{
               font-weight: bolder;
               color:$white;
+              -webkit-transition: font-size $trans-time;
               transition: font-size $trans-time;
               @include desktop{
                 font-size: 120%;
