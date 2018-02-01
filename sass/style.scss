@@ -218,7 +218,7 @@ header{
     align-items: center;
     justify-items:center;
     grid-gap: 2px;
-    @include phone{
+    @include tablet{
       display:block;
     }
     div{
@@ -227,7 +227,7 @@ header{
       grid-row:3/4;
       transition : grid-row $trans-time;
       min-width: 350px;
-      @include phone{
+      @include tablet{
         margin-top:150px;
       }
       h1{
@@ -264,11 +264,10 @@ header{
         grid-column: 1/10;
         width:100%;
         min-width: 200px;
-      }
-      @include phone{
         margin-top:100px;
         margin-bottom: 150px;
       }
+      
       input{
         width:200px;
         height:60px;
