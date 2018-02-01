@@ -45,18 +45,30 @@ $services-background:#191b28;
 
 
 /*HEADER*/
-
 header{
     width:100%;
     height: 120px;
     transition: $trans-time linear all;
     position: fixed;
+    z-index:10 !important;
     top:0px;
     left:0px;
     background-color: $transparent;
+    border-top:solid 8px $yellow;
+    padding-top:50px;
+    padding-left: 100px;
+    padding-right: 100px;
+    @include desktop{
+        padding-left:20px;
+        padding-right:20px;
+    }
     @include tablet{
         height:50px !important;
         background-color: $black !important;
+    }
+    @include phone{
+        padding-top: 0px !important;
+        border-top:0px !important;
     }
 
     #logo{
@@ -102,10 +114,7 @@ header{
         display:block;
 
         &:hover + ul{
-            height:300px;
-        }
-        &:hover + ul a{
-            height:100px;
+            top:50px;
         }
 
       }
@@ -114,15 +123,25 @@ header{
         float:right;
         ul{
             list-style: none;
+            margin-top:2px;
             @include tablet{
-
+                margin-top:0px;
                 width:60%;
-                height:0px;
+                height:300px;
                 transition: $trans-time linear all;
                 background-color: $black;
                 position: absolute;
-                top:50px;
+                z-index:-1;
+                top:-350px;
                 right:0px;
+
+                &:hover{
+                    top:50px;
+                }
+            }
+
+            @include phone{
+                width:100%;
             }
             a{
                 text-transform: uppercase;
@@ -140,6 +159,10 @@ header{
                     font-weight:500;
                     padding:0px 20px;
 
+                    @include desktop{
+                        padding: 0px 15px;
+                        font-size: 70%;
+                    }
                     @include tablet{
                         display:block;
                         padding:20px 20px;
@@ -150,7 +173,7 @@ header{
                     background-color: $yellow;
                     color:$black;
                     border-radius: 3px;
-                    padding:10px 5px;
+                    padding:10px 20px;
                     transition: $trans-time linear all;
                     border:1px solid $yellow;
 
@@ -170,7 +193,6 @@ header{
         }
     }
 }
-
 
 /*MAIN SECTION*/
 #main{
@@ -679,6 +701,7 @@ header{
     }
 }
 
+/* FOOTER SECTION */
 footer{
   background-color: $deep-blue;
   color:$white;
