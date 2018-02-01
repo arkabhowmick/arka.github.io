@@ -91,6 +91,9 @@ header{
           text-decoration: none;
           color:$white;
         }
+        &:visited , &:link{
+            text-decoration:none;
+        }
         span{
             font-size: 50%;
             background-color:$yellow;
@@ -122,7 +125,7 @@ header{
         display:block;
 
         &:hover + ul{
-            top:50px;
+            right:0px;
         }
 
       }
@@ -134,22 +137,24 @@ header{
             margin-top:2px;
             @include tablet{
                 margin-top:0px;
-                width:60%;
+                width:360px;
                 height:300px;
                 transition: $trans-time linear all;
                 background-color: $black;
                 position: absolute;
                 z-index:-1;
-                top:-350px;
-                right:0px;
+                top:50px;
+                right:-360px;
 
                 &:hover{
-                    top:50px;
+                    right:0px;
                 }
             }
 
             @include phone{
                 width:100%;
+                right:-480px;
+
             }
             a{
                 text-transform: uppercase;
@@ -182,7 +187,7 @@ header{
                     color:$black;
                     border-radius: 3px;
                     padding:10px 20px;
-                    transition: $trans-time linear all;
+                    //transition: $trans-time linear all;
                     border:1px solid $yellow;
 
                     @include tablet{
@@ -265,9 +270,9 @@ header{
         width:100%;
         min-width: 200px;
         margin-top:100px;
-        margin-bottom: 150px;
+        margin-bottom: 80px;
       }
-      
+
       input{
         width:200px;
         height:60px;
