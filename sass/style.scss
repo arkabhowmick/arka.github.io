@@ -355,6 +355,7 @@ header{
     display:grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows : repeat(2,minmax(0,250px));
+    grid-gap: 20px;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;

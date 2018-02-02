@@ -13,7 +13,6 @@ $(document).ready(function(){
     console.log("team document top: " + $("#team").offset().top);
     console.log("team 1 top: " + $("#team1").offset().top);*/
     if($(document).scrollTop()>$("#team").offset().top){
-
         var pv= 500; //predefinedValue
         if($(document).scrollTop()>$("#team1").offset().top-pv){
             $("#team1").children("img").css({"right":"0px","transform":"rotate(360deg)","opacity": "1","filter": "alpha(opacity=100)"});
@@ -32,5 +31,12 @@ $(document).ready(function(){
             $("#team4").children(".text").css({"opacity": "1","filter": "alpha(opacity=100)"});
         }
     }
+
+
+    if($(document).scrollTop()>$("#team").offset().top){
+        console.log("greater than team");
+    }
+
+
   });
 });
