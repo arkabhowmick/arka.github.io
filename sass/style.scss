@@ -534,8 +534,35 @@ header{
             right:500px;
             -webkit-transform:rotate(180deg);
                     transform:rotate(180deg);
-            -webkit-transition:all ease-in $trans-time+0.2;
-            transition:all ease-in $trans-time+0.2;
+
+            -webkit-transition: right ease-in $trans-time+0.2,
+                        opacity ease-in $trans-time+0.2,
+                        border ease-in $trans-time +(-0.3),
+                        -webkit-transform ease-in $trans-time+0.2;
+
+            transition: right ease-in $trans-time+0.2,
+                        opacity ease-in $trans-time+0.2,
+                        border ease-in $trans-time +(-0.3),
+                        -webkit-transform ease-in $trans-time+0.2;
+
+            transition: transform ease-in $trans-time+0.2,
+                        right ease-in $trans-time+0.2,
+                        opacity ease-in $trans-time+0.2,
+                        border ease-in $trans-time +(-0.3);
+
+            transition: transform ease-in $trans-time+0.2,
+                        right ease-in $trans-time+0.2,
+                        opacity ease-in $trans-time+0.2,
+                        border ease-in $trans-time +(-0.3),
+                        -webkit-transform ease-in $trans-time+0.2;
+
+            &:hover{
+                border:3px solid $light-white;
+                border-radius: 50%;
+                -webkit-box-shadow: 1px 10px 20px 0px $black;
+                        box-shadow: 1px 10px 20px 0px $black;
+            }
+
           }
           @include tablet{
             width:60%;
