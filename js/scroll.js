@@ -39,6 +39,7 @@ $(document).ready(function(){
     if($(document).scrollTop()>$("#work").offset().top - headerHeight){
         deactive();
         $("#work-menu").addClass("active");
+        $("#work").children(".container").css({"opacity":"1","filter": "alpha(opacity=100)"});
     }
     else if($(document).scrollTop()>$("#download").offset().top - headerHeight){
         deactive();
