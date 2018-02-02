@@ -165,6 +165,9 @@ header{
                 text-decoration: none;
                 color:$white;
 
+                &:link, &:visited{
+                    color:$white;
+                }
                 &:hover{
                     color:$yellow;
                     text-decoration: none;
@@ -175,7 +178,7 @@ header{
                     font-size: 85%;
                     font-weight:500;
                     padding:0px 20px;
-
+                    transition : background-color $trans-time;
                     @include desktop{
                         padding: 0px 15px;
                         font-size: 70%;
