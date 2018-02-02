@@ -28,6 +28,14 @@ $services-background:#191b28;
   text-rendering: optimizeLegibility;
 }
 
+body{
+  background-color: #e8e9ea;
+    max-width: 1900px;
+    @media only screen and (min-width:1900px){
+        margin: auto;
+    }
+}
+
 .container{
     width:95%;
     //max-width: 1000px;
@@ -57,6 +65,7 @@ $services-background:#191b28;
 /*HEADER*/
 header{
     width:100%;
+
     height: 120px;
     -webkit-transition: $trans-time linear all;
     transition: $trans-time linear all;
@@ -69,6 +78,13 @@ header{
     padding-top:50px;
     padding-left: 100px;
     padding-right: 100px;
+
+    @media only screen and (min-width:1900px){
+        max-width: 1900px;
+        //right:50%;
+        //margin-right: 950px;
+        left:initial;
+    }
     @include desktop{
         padding-left:20px;
         padding-right:20px;
@@ -178,6 +194,7 @@ header{
                     font-size: 85%;
                     font-weight:500;
                     padding:10px 20px;
+                    -webkit-transition : background-color $trans-time;
                     transition : background-color $trans-time;
                     @include desktop{
                         padding: 0px 15px;
@@ -382,12 +399,24 @@ header{
         @include tablet{
           font-size: 150%;
         }
+        &:before{
+            @include desktop{
+                display: none;
+            }
+        }
       }
       p{
         color:$light-white;
         font-weight:100;
         font-size: 80%;
         line-height: 2;
+      }
+      img{
+          display:none;
+          @include desktop{
+              display:block;
+              margin: auto;
+          }
       }
     }
     #i-phone{
@@ -605,10 +634,13 @@ header{
     .small-section{
         background-color: $light-yellow;
         .macbook{
-
           width:60%;
+          max-width: 1120px;
           position: absolute;
           right:0px;
+          @media only screen and (min-width:1900px){
+
+          }
           img{
             width:100%;
           }
