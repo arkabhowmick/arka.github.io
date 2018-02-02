@@ -2,7 +2,7 @@
 @import 'userDefinedMixins';
 @import 'preloadAnimation';
 //$yellow : #FFE347;
-
+$max-width:1200px;
 $yellow : #ffd800;
 $light-yellow : #ffe347;
 $black: rgba(0,0,0,0.8);
@@ -372,6 +372,7 @@ header{
 #services{
   background-color: $services-background;
   .container{
+    max-width: 1200px;
     padding: 60px 0;
     display:grid;
     grid-template-columns: repeat(3,1fr);
@@ -486,6 +487,7 @@ header{
     background-color: $yellow;
     .container{
         width:90%;
+        max-width: $max-width;
         display:grid;
         -webkit-transition:display $trans-time;
         transition:display $trans-time;
@@ -701,6 +703,9 @@ header{
 
 /*APP WORKING SECTION*/
 #work{
+    .container{
+        max-width: $max-width;
+    }
     background:  -webkit-gradient(linear,left top, left bottom,from(rgba(0,0,0,0.3)),to(rgba(0,0,0,0.3))), url('img/main.png');
     background:  linear-gradient(to bottom,rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('img/main.png');
     background-attachment: fixed;
