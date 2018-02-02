@@ -177,7 +177,7 @@ header{
                     display:inline-block;
                     font-size: 85%;
                     font-weight:500;
-                    padding:0px 20px;
+                    padding:10px 20px;
                     transition : background-color $trans-time;
                     @include desktop{
                         padding: 0px 15px;
@@ -202,7 +202,8 @@ header{
                     }
                     &:hover{
                       background-color: $transparent;
-                      border:1px solid $yellow;
+                      //border:1px solid $yellow;
+                      border:0px;
                       color:$yellow;
                     }
                 }
