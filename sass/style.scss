@@ -613,10 +613,10 @@ header{
 #download{
     display:grid;
     grid-template-rows: 1fr 2fr;
-    .container{
+    .text-box{
         width:50%;
         margin:0;
-        padding:50px 80px 60px 80px;
+        padding:50px 80px 60px 0px;
         -webkit-transition: width $trans-time;
         transition: width $trans-time;
         @include desktop{
@@ -661,6 +661,9 @@ header{
     .small-section{
         background-color: $light-yellow;
         position: relative;
+        .container{
+            max-width: 1200px;
+        }
         .macbook{
           width:60%;
           max-width: 1120px;
@@ -676,7 +679,7 @@ header{
             display:none;
           }
         }
-        .container{
+        .text-box{
           -webkit-transition:width $trans-time;
           transition:width $trans-time;
             @include tablet{
@@ -686,8 +689,11 @@ header{
     }
 
     .big-section{
-        background-color: $white;
         .container{
+            max-width: 1200px;
+        }
+        background-color: $white;
+        .text-box{
           -webkit-transition:width $trans-time;
           transition:width $trans-time;
             @media only screen and(max-width:980px){
