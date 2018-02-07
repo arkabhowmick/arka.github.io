@@ -11,6 +11,11 @@
   text-rendering: optimizeLegibility;
 }
 
+.full-width{
+      @include phone{
+          width:100%;
+      }
+}
 body{
   background-color: #e8e9ea;
     //max-width: 1900px;
@@ -388,9 +393,8 @@ header{
 /*SERVICES SECTION*/
 #services{
   background-color: $services-background;
+  padding: 60px 10px;
   .container{
-    max-width: 1200px;
-    padding: 60px 0;
     display:grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows : repeat(2,minmax(0,250px));
@@ -408,14 +412,13 @@ header{
       display:block;
     }
     .service-desc{
-      padding: 20px 0;
       text-align: center;
       h2{
         color:$white;
         font-weight:300;
         font-size:180%;
         line-height: 1.5;
-        @include tablet{
+        @include desktop{
           font-size: 150%;
         }
         &:before{
@@ -443,8 +446,7 @@ header{
       grid-row: 2/3;
       -ms-flex-item-align: end;
           align-self: flex-end;
-      -webkit-transition: max-width $trans-time;
-      transition: max-width $trans-time;
+      transition: $trans-time all linear;
       @include desktop{
         img{
           max-width: 100%;
