@@ -274,6 +274,9 @@ header{
     background-position: center;
     background-attachment: fixed;
     min-height: 900px;
+    @include desktop{
+          min-height: 700px;
+    }
     .container{
           div{
                 padding-top:236px;
@@ -287,6 +290,9 @@ header{
                 h1{
                       color:$white;
                       font-size:300%;
+                      @include tablet{
+                            font-size: 200%;
+                      }
                 }
           }
           form{
@@ -295,6 +301,7 @@ header{
                 text-align: center;
                 margin:auto;
                 margin-top:80px;
+                margin-bottom: 80px;
                 input{
                       width:200px;
                       height:60px;
@@ -326,6 +333,11 @@ header{
                       }
 
                       @include tablet{
+                        width:49%;
+                        margin-right: 0px;
+                        margin-bottom: 5px;
+                      }
+                      @include phone{
                         width:100%;
                         margin-right: 0px;
                         margin-bottom: 5px;
@@ -351,8 +363,14 @@ header{
                 }
 
                 @include tablet{
+                  width:50%;
+                  margin-left:0px;
+                  margin-top: 20px;
+                }
+                @include phone{
                   width:100%;
                   margin-left:0px;
+                  margin-top: 0px;
                 }
               }
           }
@@ -474,14 +492,10 @@ header{
 /*TEAM SECTION*/
 #team{
     background-color: $yellow;
-    .container{
-          .row{
-                padding:50px 0px;
-          }
-    }
     #team-heading{
           text-align: center;
-
+          padding-top:50px;
+          padding-bottom: 50px;
           h1{
               font-size:280%;
               -webkit-transition:font-size $trans-time;
@@ -495,6 +509,11 @@ header{
               font-size:150%;
               font-weight: bolder;
           }
+    }
+
+    .team-members{
+          padding-bottom: 50px;
+          height:auto;
     }
 
         .team-desc{
@@ -573,7 +592,7 @@ header{
     display:grid;
     grid-template-rows: 1fr 2fr;
     .container{
-          margin-bottom: 20px;
+          //margin-bottom: 20px;
     }
     .text-box{
         width:50%;
@@ -688,7 +707,7 @@ header{
           -webkit-transition : all ease-in $trans-time;
           transition : all ease-in $trans-time;
           padding-top: 80px;
-          padding-bottom: 80px;
+          padding-bottom: 90px;
 
           #work-heading{
             text-align: center;
@@ -774,10 +793,16 @@ footer{
   color:$white;
   .links{
         padding-top: 100px;
+        @include desktop{
+              padding-top: 50px;
+        }
         ul{
               list-style: none;
               li{
                     text-align: center;
+                    @include desktop{
+                          line-height: 1;
+                    }
                     a{
                           color:$white;
                           text-decoration: none;
@@ -794,6 +819,10 @@ footer{
         text-align: center;
         padding-bottom: 150px;
         padding-top: 100px;
+        @include desktop{
+              padding-top: 75px;
+              padding-bottom: 50px;
+        }
 
         @include phone{
               padding-bottom: 50px;
