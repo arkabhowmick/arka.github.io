@@ -344,34 +344,20 @@ header{
                       }
                 }
                 button{
-                width:180px;
-                height:60px;
-                margin-left: 5px;
-                text-align: center;
-                background-color: $yellow;
-                border: 0px;
-                border-radius: 5px;
-                font-weight: 700;
-                -webkit-transition: background-color 0.5s;
-                transition: background-color 0.5s;
-
-                &:hover{
-                  background-color: rgba(0,0,0,0);
-                  border: 1px solid $yellow;
-                  color:$yellow;
-                  cursor: pointer;
-                }
-
-                @include tablet{
-                  width:50%;
-                  margin-left:0px;
-                  margin-top: 20px;
-                }
-                @include phone{
-                  width:100%;
-                  margin-left:0px;
-                  margin-top: 0px;
-                }
+                    @include button($black,$yellow);
+                    width:180px;
+                    height:60px;
+                    margin-left: 5px;
+                    @include tablet{
+                      width:50%;
+                      margin-left:0px;
+                      margin-top: 20px;
+                    }
+                    @include phone{
+                      width:100%;
+                      margin-left:0px;
+                      margin-top: 0px;
+                    }
               }
           }
     }
@@ -581,7 +567,7 @@ header{
             }
           }
           p{
-            font-weight: 100;
+            font-weight: 300;
             font-size: 90%;
           }
         }
@@ -617,23 +603,10 @@ header{
             font-weight: 300;
             line-height: 2;
         }
-        a{
-          text-decoration: none;
-          color:$white;
-          background-color: $deep-blue;
-          font-size: 80%;
-          font-weight: bold;
-          padding: 20px 40px;
-          border-radius: 5px;
-          -webkit-transition: background-color $trans-time;
-          transition: background-color $trans-time;
-
-          &:hover{
-            background-color: rgba(0,0,0,0);
-            border: 1px solid $deep-blue;
-            color:$deep-blue;
-            cursor: pointer;
-          }
+        button{
+            @include button($white,$deep-blue);
+            padding: 20px 40px;
+            font-size: 80%;
         }
         #last-p{
           margin-bottom:70px;
@@ -761,25 +734,14 @@ header{
               margin: auto;
               margin-top: 20px;
               button{
-                width:200px;
-                height:60px;
-                color:$black;
-                font-size:90%;
-                background-color: $yellow;
-                border: 0px;
-                border-radius: 2px;
-                font-weight: 700;
-                -webkit-transition: background-color 0.5s;
-                transition: background-color 0.5s;
-                &:hover{
-                  background-color: rgba(0,0,0,0);
-                  border: 1px solid $yellow;
-                  color:$yellow;
-                  cursor: pointer;
-                }
-                @include tablet{
-                  margin: 30px auto;
-                }
+                  @include button($black,$yellow);
+                  padding: 20px 40px;
+                  width: 100%;
+                  font-size: 80%;
+                  text-align: center;
+                  @include tablet{
+                    margin: 30px auto;
+                  }
 
               }
         }
@@ -817,8 +779,7 @@ footer{
 
    .credits{
         text-align: center;
-        padding-bottom: 150px;
-        padding-top: 100px;
+        padding: 150px 20px 100px 20px;
         @include desktop{
               padding-top: 75px;
               padding-bottom: 50px;
