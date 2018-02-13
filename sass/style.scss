@@ -1,4 +1,4 @@
-@import 'import';
+@import 'partials/import';
 
 *{
   margin:0;
@@ -16,10 +16,10 @@
           width:100%;
       }
 }
+
 body{
-  background-color: #e8e9ea;
-    //max-width: 1900px;
-    @media only screen and (min-width:1900px){
+    background-color: #e8e9ea;
+    @include custom(1900px){
         margin: auto;
     }
 }
@@ -135,24 +135,40 @@ header{
         .cross{
               background-color: $transparent;
               &::before {
-                  animation-name: before;
-                  animation-duration: $trans-time+0.5;
-                  transform: translate(0px,10px) rotate(45deg);
+                  -webkit-animation-name: before;
+                          animation-name: before;
+                  -webkit-animation-duration: $trans-time+0.5;
+                          animation-duration: $trans-time+0.5;
+                  -webkit-transform: translate(0px,10px) rotate(45deg);
+                          transform: translate(0px,10px) rotate(45deg);
               }
               &::after{
-                animation-name: after;
-                animation-duration: $trans-time+0.5;
-                transform: translate(0px,-10px) rotate(-45deg);
+                -webkit-animation-name: after;
+                        animation-name: after;
+                -webkit-animation-duration: $trans-time+0.5;
+                        animation-duration: $trans-time+0.5;
+                -webkit-transform: translate(0px,-10px) rotate(-45deg);
+                        transform: translate(0px,-10px) rotate(-45deg);
+              }
+              @-webkit-keyframes before{
+                  0%{ -webkit-transform: translate(0px,0px); transform: translate(0px,0px);}
+                  25%{-webkit-transform: translate(0px,10px) rotate(0deg);transform: translate(0px,10px) rotate(0deg);}
+                  100%{-webkit-transform: translate(0px,10px) rotate(45deg);transform: translate(0px,10px) rotate(45deg);}
               }
               @keyframes before{
-                  0%{ transform: translate(0px,0px);}
-                  25%{transform: translate(0px,10px) rotate(0deg);}
-                  100%{transform: translate(0px,10px) rotate(45deg);}
+                  0%{ -webkit-transform: translate(0px,0px); transform: translate(0px,0px);}
+                  25%{-webkit-transform: translate(0px,10px) rotate(0deg);transform: translate(0px,10px) rotate(0deg);}
+                  100%{-webkit-transform: translate(0px,10px) rotate(45deg);transform: translate(0px,10px) rotate(45deg);}
+              }
+              @-webkit-keyframes after{
+                  0%{ -webkit-transform: translate(0px,0px); transform: translate(0px,0px);}
+                  25%{-webkit-transform: translate(0px,-10px) rotate(0deg);transform: translate(0px,-10px) rotate(0deg);}
+                  100%{-webkit-transform: translate(0px,-10px) rotate(-45deg);transform: translate(0px,-10px) rotate(-45deg);}
               }
               @keyframes after{
-                  0%{ transform: translate(0px,0px);}
-                  25%{transform: translate(0px,-10px) rotate(0deg);}
-                  100%{transform: translate(0px,-10px) rotate(-45deg);}
+                  0%{ -webkit-transform: translate(0px,0px); transform: translate(0px,0px);}
+                  25%{-webkit-transform: translate(0px,-10px) rotate(0deg);transform: translate(0px,-10px) rotate(0deg);}
+                  100%{-webkit-transform: translate(0px,-10px) rotate(-45deg);transform: translate(0px,-10px) rotate(-45deg);}
               }
         }
 
@@ -296,7 +312,7 @@ header{
                 }
           }
           form{
-                min-width:300px;
+                //min-width:300px;
                 max-width: 900px;
                 text-align: center;
                 margin:auto;
@@ -419,6 +435,7 @@ header{
       grid-row: 2/3;
       -ms-flex-item-align: end;
           align-self: flex-end;
+      -webkit-transition: $trans-time linear all;
       transition: $trans-time linear all;
       @include desktop{
         img{
@@ -577,9 +594,6 @@ header{
 #download{
     display:grid;
     grid-template-rows: 1fr 2fr;
-    .container{
-          //margin-bottom: 20px;
-    }
     .text-box{
         width:50%;
         margin:0;
