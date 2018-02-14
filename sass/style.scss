@@ -631,7 +631,9 @@ header{
             max-width: 1200px;
         }
         .macbook{
-          width:60%;
+          @include custom(1800px){
+              width:60%;
+          }
           max-width: 1120px;
           position: absolute;
           right:0px;
