@@ -397,8 +397,12 @@ header{
         float:left;
     }
     .center-services{
-        width:30%;
+        //width:30%;
         margin:auto;
+        position: relative;
+        @include desktop{
+            width:30%;
+        }
         @include tablet{
               display:none;
         }
