@@ -5,8 +5,8 @@ $(document).ready(function(){
         $('body , html').animate({
             scrollTop : $(link).offset().top-headerHeight
         },1000);
-        $(".menu-item").children().removeClass("active");
-        $(this).children().addClass("active");
+        $//(".menu-item").children().removeClass("active");
+        //$(this).children().addClass("active");
         e.preventDefault();
     });
 

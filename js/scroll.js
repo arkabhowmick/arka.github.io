@@ -14,25 +14,9 @@ $(document).ready(function(){
     /*console.log("document top: " + $(document).scrollTop());
     console.log("team document top: " + $("#team").offset().top);
     console.log("team 1 top: " + $("#team1").offset().top);*/
-
-    if($(document).scrollTop()>$("#team").offset().top){
-        var pv= 500; //predefinedValue
-        if($(document).scrollTop()>=$("#team1").offset().top-pv){
-            $("#team1").children("img").css({"right":"0px","transform":"rotate(360deg)","opacity": "1","filter": "alpha(opacity=100)"});
-            $("#team1").children(".text").css({"opacity": "1","filter": "alpha(opacity=100)"});
-        }
-        if($(document).scrollTop()>=$("#team2").offset().top-pv){
-            $("#team2").children("img").css({"right":"0px","transform":"rotate(360deg)","opacity": "1","filter": "alpha(opacity=100)"});
-            $("#team2").children(".text").css({"opacity": "1","filter": "alpha(opacity=100)"});
-        }
-        if($(document).scrollTop()>=$("#team3").offset().top -pv){
-            $("#team3").children("img").css({"right":"0px","transform":"rotate(360deg)","opacity": "1","filter": "alpha(opacity=100)"});
-            $("#team3").children(".text").css({"opacity": "1","filter": "alpha(opacity=100)"});
-        }
-        if($(document).scrollTop()>=$("#team4").offset().top -pv){
-            $("#team4").children("img").css({"right":"0px","transform":"rotate(360deg)","opacity": "1","filter": "alpha(opacity=100)"});
-            $("#team4").children(".text").css({"opacity": "1","filter": "alpha(opacity=100)"});
-        }
+    if($(document).scrollTop()>=$("#team").offset().top-70){
+      $(".team-desc").children("img").css({"right":"0px","transform":"rotate(360deg)","opacity": "1","filter": "alpha(opacity=100)"});
+      $(".team-desc").children(".text").css({"opacity": "1","filter": "alpha(opacity=100)"});
     }
 
 
