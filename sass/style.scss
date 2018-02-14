@@ -299,7 +299,7 @@ header{
                 @include tablet{
                     padding-top:150px;
                 }
-                
+
                 max-width: 900px;
                 text-align: center;
                 margin:auto;
@@ -384,24 +384,10 @@ header{
   background-color: $services-background;
   padding: 60px 10px;
   .container{
-    display:grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows : repeat(2,minmax(0,250px));
-    grid-gap: 20px;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    justify-items:center;
-    @include tablet{
-      grid-template-rows : repeat(2,minmax(0,300px));
-      grid-template-columns: 1fr 1fr;
-      //padding-bottom: 0px;
-    }
-    @include phone{
-      display:block;
-    }
     .service-desc{
       text-align: center;
+      padding-top: 30px;
+      padding-bottom: 30px;
       h2{
         color:$white;
         font-weight:300;
@@ -411,6 +397,8 @@ header{
           font-size: 150%;
         }
         &:before{
+            position: relative;
+            top: 15px;
             @include desktop{
                 display: none;
             }
@@ -431,62 +419,43 @@ header{
       }
     }
     #i-phone{
-      grid-column: 2/3;
-      grid-row: 2/3;
-      -ms-flex-item-align: end;
-          align-self: flex-end;
-      -webkit-transition: $trans-time linear all;
-      transition: $trans-time linear all;
+      position: absolute;
+      bottom: -512px;
       @include desktop{
-        img{
-          max-width: 100%;
-        }
+          position: relative;
+          bottom: 0px;
       }
-      @include tablet{
-        display:none;
-      }
+      left: 0px;
+      right:0px;
+      width:100%;
+      max-width: 450px;
+      //top:-150px;
+      //width: 100%;
+        /*img{
+              //width:100%;
+              max-width: 450px;
+              position: absolute;
+              top:-208px;
+        }*/
     }
     #printer-services{
-      grid-column: 1/2;
-      grid-row: 1/2;
       h2:before{
-        position: relative;
-        top: 15px;
         content: url('img/printer.png')  "\00a0 \00a0";
       }
     }
     #mobile-services{
-      grid-column: 3/4;
-      grid-row: 1/2;
       h2:before{
-        position: relative;
-        top: 15px;
         content:url('img/mobile.png') "\00a0 \00a0";
       }
-      @include tablet{
-        grid-column: 2/3;
-      }
     }
-
     #it-services{
-      grid-column: 1/2;
-      grid-row: 2/3;
       h2:before{
-        position: relative;
-        top: 15px;
         content:url('img/pc.png') "\00a0 \00a0";
       }
     }
     #printer1-services{
-      grid-column: 3/4;
-      grid-row: 2/3;
       h2:before{
-        position: relative;
-        top: 15px;
         content:url('img/printer1.png') "\00a0 \00a0";
-      }
-      @include tablet{
-        grid-column: 2/3;
       }
     }
   }
