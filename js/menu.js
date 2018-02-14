@@ -5,7 +5,7 @@ $(document).ready(function(){
         $('body , html').animate({
             scrollTop : $(link).offset().top-headerHeight
         },1000);
-        $//(".menu-item").children().removeClass("active");
+        //$(".menu-item").children().removeClass("active");
         //$(this).children().addClass("active");
         e.preventDefault();
     });
@@ -21,6 +21,8 @@ $(document).ready(function(){
             $("#menu-icon").children("div").removeClass("cross");
         }
     });
-
-
+    $(".menu-item").click(function(){
+        $("#menu-icon").children("div").toggleClass("cross");
+        $("#menu").toggleClass("expand");
+    });
 });
