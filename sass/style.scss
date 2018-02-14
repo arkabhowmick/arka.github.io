@@ -384,10 +384,31 @@ header{
   background-color: $services-background;
   padding: 60px 10px;
   .container{
+    .services{
+        width:30%;
+        @include tablet{
+            width:50%;
+        }
+        @include phone{
+            width:100%;
+        }
+    }
+    .left-services{
+        float:left;
+    }
+    .center-services{
+        width:30%;
+        margin:auto;
+        @include tablet{
+              display:none;
+        }
+    }
+    .right-services{
+        float:right;
+    }
     .service-desc{
       text-align: center;
-      padding-top: 30px;
-      padding-bottom: 30px;
+      padding: 30px 20px;
       h2{
         color:$white;
         font-weight:300;
@@ -422,8 +443,11 @@ header{
       position: absolute;
       bottom: -512px;
       @include desktop{
-          position: relative;
-          bottom: 0px;
+          position: static;
+          padding-top: 30%;
+      }
+      @include custom(992px){
+          padding-top: 50%;
       }
       left: 0px;
       right:0px;
