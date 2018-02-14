@@ -21,8 +21,11 @@ $(document).ready(function(){
             $("#menu-icon").children("div").removeClass("cross");
         }
     });
+
     $(".menu-item").click(function(){
-        $("#menu-icon").children("div").toggleClass("cross");
-        $("#menu").toggleClass("expand");
+        if($(window).width()<768){
+            $("#menu-icon").children("div").toggleClass("cross");
+            $("#menu").toggleClass("expand");
+        }
     });
 });
