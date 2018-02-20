@@ -6,10 +6,10 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-      <script type="text/javascript" src="js/menu.js"></script>
-      <script type="text/javascript" src="js/scroll.js"></script>
+
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <!--<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">-->
+      <link rel="stylesheet" type="text/css" href="css/animate.css">
       <link rel="stylesheet" type="text/css" href="css/style.css">
       <link rel="icon" href="favicon.png" type="image/png">
       <title>Uranos</title>
@@ -53,32 +53,32 @@
             </div>
         </header>
 
-        <section id="main">
+        <section id="main" class="parallax-window" data-parallax="scroll" data-image-src="img/main.png">
             <div class="container">
                 <div>
-                    <h1 class="light-font">Discover the world of awesome</h1>
-                    <h1 class="bold-font">free PSD templates</h1>
+                    <h1 class="light-font wow zoomIn" data-wow-offset="10" id="head-1">Discover the world of awesome</h1>
+                    <h1 class="bold-font wow zoomIn" data-wow-offset="10" data-wow-delay="0.5s" id="head-2">free PSD templates</h1>
                 </div>
                 <form>
-                    <input type="email" name="email" value="" placeholder="EMAIL">
-                    <input type="password" name="password" value="" placeholder="PASSWORD">
-                    <button type="submit" name="submit">REGISTER</button>
+                    <input class="wow bounceInLeft" data-wow-offset="10" data-wow-duration="0.3" data-wow-delay="0.5s" type="email" name="email" value="" placeholder="EMAIL">
+                    <input class="wow bounceInUp" data-wow-offset="10" data-wow-duration="0.3" data-wow-delay="0.8s" type="password" name="password" value="" placeholder="PASSWORD">
+                    <button class="wow bounceInRight" data-wow-offset="10" data-wow-duration="0.3" data-wow-delay="1s" type="submit" name="submit">REGISTER</button>
                 </form>
             </div>
         </section>
 
-        <section id="services">
+        <section id="services" >
           <div class="container">
                   <div class="left-services services">
                       <div class="row">
-                          <div class="service-desc" id="printer-services">
+                          <div class="service-desc wow fadeInLeft" id="printer-services">
                             <img src="img/printer.png" alt="printer">
                             <h2>Print Services</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut </p>
                           </div>
                       </div>
                       <div class="row">
-                          <div class="service-desc" id="it-services">
+                          <div class="service-desc wow fadeInLeft" data-wow-offset="200" id="it-services">
                             <img src="img/pc.png"  alt="pc">
                             <h2>IT Services</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut </p>
@@ -88,14 +88,14 @@
 
                   <div class="right-services services">
                       <div class="row">
-                          <div class="service-desc" id="mobile-services">
+                          <div class="service-desc wow fadeInRight" id="mobile-services">
                             <img src="img/mobile.png" alt="mobile">
                             <h2>Mobile Devices</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut </p>
                           </div>
                       </div>
                       <div class="row">
-                          <div class="service-desc" id="printer1-services">
+                          <div class="service-desc wow fadeInRight" data-wow-offset="200" id="printer1-services">
                             <img src="img/printer1.png" alt="printer1">
                             <h2>Print Services</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut </p>
@@ -103,8 +103,8 @@
                       </div>
                   </div>
 
-                  <div class="center-services">
-                          <img src="img/iphone.png" id="i-phone" class="center-block" alt="iphone">
+                  <div class="center-services " >
+                          <img  src="img/iphone.png" id="i-phone" class="wow zoomIn center-block" alt="iphone">
                   </div>
 
 
@@ -112,10 +112,10 @@
           </div>
         </section>
 
-        <section id="team">
+        <section id="team" class="wow zoomIn">
             <div class="container">
                 <div class="row">
-                  <div id="team-heading" >
+                  <div id="team-heading" class="wow zoomIn" >
                       <h1 class="light-font">Meet our team</h1>
                       <h3 class="bold-font">We make this APP!</h3>
                   </div>
@@ -125,33 +125,33 @@
                       <div class="team-members">
                           <div class="col-md-3 col-sm-6 col-xs-6 full-width">
                             <div class="team-desc"  id="team1">
-                                <img src="img/team1.png" alt="Team 1">
-                                <h2 class="text">Lorem ipsum</h2>
-                                <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                                <img src="img/team1.png" class="wow bounceInLeft" data-wow-duration="0.3s" data-wow-delay="0.8s" alt="Team 1">
+                                <h2 class="text wow fadeIn" data-wow-offset="10" >Lorem ipsum</h2>
+                                <p class="text wow fadeIn" data-wow-offset="10" >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
                             </div>
                           </div>
 
                           <div class="col-md-3 col-sm-6 col-xs-6 full-width">
-                            <div class="team-desc " id="team2">
-                                <img src="img/team2.png" alt="Team 2">
-                                <h2 class="text">Lorem ipsum</h2>
-                                <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                            <div class="team-desc" id="team2">
+                                <img src="img/team2.png" class="wow bounceInLeft" data-wow-duration="0.3s" data-wow-delay="0.5s" alt="Team 2">
+                                <h2 class="text wow fadeIn" data-wow-offset="10" >Lorem ipsum</h2>
+                                <p class="text wow fadeIn" data-wow-offset="10" >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
                             </div>
                           </div>
 
                           <div class="col-md-3 col-sm-6 col-xs-6 full-width">
-                            <div class="team-desc " id="team3">
-                                <img src="img/team3.png" alt="Team 3">
-                                <h2 class="text">Lorem ipsum</h2>
-                                <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                            <div class="team-desc" id="team3">
+                                <img src="img/team3.png" class="wow bounceInLeft" data-wow-duration="0.3s" data-wow-delay="0.3s" alt="Team 3">
+                                <h2 class="text wow fadeIn" data-wow-offset="10" >Lorem ipsum</h2>
+                                <p class="text wow fadeIn" data-wow-offset="10" >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
                             </div>
                           </div>
 
                           <div class="col-md-3 col-sm-6 col-xs-6 full-width">
                             <div class="team-desc" id="team4">
-                                <img src="img/team4.png" alt="Team 4">
-                                <h2 class="text">Lorem ipsum</h2>
-                                <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                                <img src="img/team4.png" class="wow bounceInLeft" data-wow-duration="0.3s"  alt="Team 4">
+                                <h2 class="text wow fadeIn" data-wow-offset="10" >Lorem ipsum</h2>
+                                <p class="text wow fadeIn" data-wow-offset="10" >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
                             </div>
                           </div>
                       </div>
@@ -159,13 +159,13 @@
             </div>
         </section>
 
-        <section id="download">
+        <section id="download" >
             <div class="small-section">
                 <div class="container">
                     <div class="macbook">
-                      <img src="img/macbook.png" alt="Mac Book">
+                      <img class="wow fadeInRight" src="img/macbook.png" alt="Mac Book">
                     </div>
-                    <div class="text-box">
+                    <div class="text-box wow fadeInLeft">
                       <h1>This is awesome APP</h1>
                       <p>Lorem ipsum dolor sit amet, consectetur adipia. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in.</p>
                     </div>
@@ -173,7 +173,7 @@
             </div>
             <div class="big-section">
                   <div class="container">
-                      <div class="text-box">
+                      <div class="text-box wow fadeInLeft">
                         <h1>This is awesome APP</h1>
                         <p>Lorem ipsum dolor sit amet, consectetur adipia. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in.</p>
                         <p id="last-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do .......   tempor incididunt ut labore et dolore magna aliquar</p>
@@ -183,39 +183,39 @@
             </div>
         </section>
 
-        <section id="work">
+        <section id="work" class="parallax-window" data-parallax="scroll" data-image-src="img/main.png">
           <div class="container">
               <div class="row">
-                <div id="work-heading">
+                <div id="work-heading" class="wow zoomIn">
                     <h1 class="light-font">How our app works?</h1>
                     <h3 class="bold-font">We make this APP!</h3>
                 </div>
               </div>
 
               <div class="row">
-                  <div class="col-md-3 col-sm-6 col-xs-12">
-                      <div class="work-desc" id="work1">
+                  <div class="col-md-3 col-sm-6 col-xs-6 full-width">
+                      <div class="work-desc wow zoomIn" id="work1">
                           <img src="img/work11.png" alt="Work 1">
                           <h2>Lorem ipsum</h2>
                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
                       </div>
                   </div>
-                  <div class="col-md-3 col-sm-6 col-xs-12">
-                      <div class="work-desc" id="work2">
+                  <div class="col-md-3 col-sm-6 col-xs-6 full-width">
+                      <div class="work-desc wow zoomIn" id="work2">
                           <img src="img/work22.png" alt="Work 2">
                           <h2>Lorem ipsum</h2>
                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
                       </div>
                   </div>
-                  <div class="col-md-3 col-sm-6 col-xs-12">
-                      <div class="work-desc" id="work3">
+                  <div class="col-md-3 col-sm-6 col-xs-6 full-width">
+                      <div class="work-desc wow zoomIn" id="work3">
                           <img src="img/work33.png" alt="Work 3">
                           <h2>Lorem ipsum</h2>
                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
                       </div>
                   </div>
-                  <div class="col-md-3 col-sm-6 col-xs-12">
-                      <div class="work-desc" id="work4">
+                  <div class="col-md-3 col-sm-6 col-xs-6 full-width">
+                      <div class="work-desc wow zoomIn" id="work4">
                           <img src="img/work44.png" alt="Work 4">
                           <h2>Lorem ipsum</h2>
                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
@@ -224,7 +224,7 @@
               </div>
 
 
-              <div class="button">
+              <div class="button wow zoomIn">
                     <button>DOWNLOAD</button>
               </div>
 
@@ -233,12 +233,12 @@
           </div>
         </section>
 
-        <footer>
+        <footer id="footer" >
             <div class="container">
                 <div class="row">
 
                     <div class="col-md-3 col-sm-6 col-xs-6 full-width">
-                        <div class="links">
+                        <div class="links wow fadeIn" data-wow-duration="0.5s">
                             <ul>
                                 <li><a href="#">loremsdsd</a><br></li>
                                 <li><a href="#">ipsum</a><br></li>
@@ -254,7 +254,7 @@
                     </div>
 
                   <div class="col-md-3 col-sm-6 col-xs-6 full-width">
-                      <div class="links">
+                      <div class="links wow fadeIn" data-wow-duration="0.5s">
                           <ul>
                               <li><a href="#">lordsdssem</a><br></li>
                               <li><a href="#">ipdsdsum</a><br></li>
@@ -272,7 +272,7 @@
                   </div>
 
                   <div class="col-md-3 col-sm-6 col-xs-6 full-width">
-                      <div class="links">
+                      <div class="links wow fadeIn" data-wow-duration="0.5s">
                           <ul>
                               <li><a href="#">lorddddem</a><br></li>
                               <li><a href="#">ipsum</a><br></li>
@@ -289,7 +289,7 @@
                   </div>
 
                   <div class="col-md-3 col-sm-6 col-xs-6 full-width">
-                      <div class="links">
+                      <div class="links wow fadeIn" data-wow-duration="0.5s">
                           <ul>
                               <li><a href="#">lorem</a><br></li>
                               <li><a href="#">ipssdsdsum</a><br></li>
@@ -305,7 +305,7 @@
 
                 </div>
                 <div class="row">
-                    <div class="credits">
+                    <div class="credits wow fadeIn" data-wow-duration="0.5s" data-wow-offset="0">
                         <p> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         <p>Website designed by <a href="http://www.arkabhowmick.xyz">Arka Bhowmick</a> &copy; 2018 <a href="http://innoraft.com/">Innoraft</a></p>
                     </div>
@@ -313,6 +313,20 @@
             </div>
         </footer>
 
+        <script type="text/javascript" src="js/menu.js"></script>
+        <script type="text/javascript" src="js/scroll.js"></script>
+        <script type="text/javascript" src="js/wow.min.js"></script>
+        <script type="text/javascript" src="js/parallax.min.js"></script>
+        <script>
+        wow=new WOW({
+            boxClass:     'wow',      // default
+            animateClass: 'animated', // default
+            offset:       300,          // default
+            mobile:       true,       // default
+            live:         true        // default
+        });
+        wow.init();
+        </script>
   </body>
 
 </html>
