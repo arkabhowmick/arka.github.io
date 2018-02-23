@@ -323,6 +323,7 @@ header{
                 margin-top:80px;
                 margin-bottom: 80px;
                 input{
+                      outline: none;
                       width:200px;
                       height:60px;
                       padding: 20px;
@@ -348,8 +349,8 @@ header{
                         color: $light-white !important;
                       }
                       &:focus{
-                        outline: 1px solid $yellow;
-                        border:0px;
+                        //outline: 1px solid $yellow;
+                        border:1px solid $yellow;
                       }
 
                       @include tablet{
