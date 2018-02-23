@@ -263,7 +263,7 @@ header{
                     border-radius: 3px;
                     //padding:10px 20px;
                     //transition: $trans-time linear all;
-                    border:1px solid $yellow;
+                    //border:1px solid $yellow;
 
                     @include tablet{
                         border-radius: 0px;
@@ -288,9 +288,9 @@ header{
 
 /*MAIN SECTION*/
 #main{
-    /*background: url('img/main.png');
+    background: url('img/main.png');
     background-position: center;
-    background-attachment: fixed;*/
+    background-attachment: fixed;
 
     min-height: 900px;
     @include desktop{
