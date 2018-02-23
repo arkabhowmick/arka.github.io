@@ -5,7 +5,7 @@ $(document).ready(function(){
     hideElements();
     setTimeout(function() {
         $(".preload").fadeOut("slow");
-    }, 400);
+    }, 1000);
 
     headerAdjust();
     menuActive();
