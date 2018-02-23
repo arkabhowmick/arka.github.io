@@ -288,9 +288,9 @@ header{
 
 /*MAIN SECTION*/
 #main{
-    background: url('img/main.png');
+    /*background: url('img/main.png');
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: fixed;*/
 
     min-height: 900px;
     @include desktop{
