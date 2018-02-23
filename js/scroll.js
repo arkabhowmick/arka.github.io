@@ -5,7 +5,7 @@ $(document).ready(function(){
     hideElements();
     setTimeout(function() {
         $(".preload").fadeOut("slow");
-    }, 200);
+    }, 400);
 
     headerAdjust();
     menuActive();
@@ -33,7 +33,6 @@ function headerAdjust(){
 
 function menuActive(){
     $(window).scroll(function(){
-        console.log($(document).scrollTop());
         if($(document).scrollTop()>$("#work").offset().top - headerHeight){
             deactive();
             $("#work-menu").addClass("active");
